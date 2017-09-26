@@ -1,0 +1,4 @@
+
+app_root: "/home/ubuntu/app"
+data_root: "/home/ubuntu/data"
+ansible_root: "/home/ubuntu/ansible"

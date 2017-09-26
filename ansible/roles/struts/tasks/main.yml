@@ -1,0 +1,11 @@
+- name: Build app.war.
+  shell: mvn -e clean package -DskipTests
+  args:
+    chdir: "{{ app_root }}"
+
+- name: Copy Compiled War
+  copy:
+    src: "{{ app_root }}/{{ item.key }}/target/{{ item.value }}"
+    dest: "{{ tomcat_webapps_path }}/{{item.value}}"
+    remote_src: yes
+  with_dict: "{{ apps }}"

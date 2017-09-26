@@ -1,0 +1,12 @@
+---
+
+- name: Configuration for local development on Vagrant VM
+  hosts: all
+  become: yes
+  vars:
+    user_name: "ubuntu"
+
+  roles:
+    - common
+    - tomcat
+    - struts

@@ -1,0 +1,4 @@
+---
+
+# server name for nginx
+tomcat_etc_path: /etc/tomcat8

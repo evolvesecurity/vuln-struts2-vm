@@ -1,0 +1,28 @@
+---
+
+- name: Install Common Packages
+  apt: name={{ item }} state=installed
+  with_items:
+    - build-essential
+    - htop
+    - vim
+    - git
+    - unzip
+    - curl
+    - bash
+
+- name: Install SSL Packages
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+    - openssl
+    - libssl-dev
+    - libssl-doc
+    - libffi-dev
+
+
+- name: Install Java Packages
+  apt: name={{ item }} state=installed
+  with_items:
+    - default-jdk
+    - maven
+    - python-lxml

@@ -1,0 +1,13 @@
+---
+
+# server name for nginx
+tomcat_webapps_path: /var/lib/tomcat8/webapps
+apps:
+  basic-struts: "basic-struts.war"
+  crud: "crud-1.0-SNAPSHOT.war"
+  file-upload: "file-upload-1.0.0.war"
+  form-validation: "form_validation.war"
+  helloworld: "hello-world.war"
+  http-session: "http-session.war"
+  shiro-basic: "shiro-basic.war"
+  mailreader: "mailreader-1.0.0.war"

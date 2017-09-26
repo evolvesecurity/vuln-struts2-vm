@@ -1,0 +1,17 @@
+---
+
+- name: Ensure Tomcat Is Installed
+  apt: name={{ item }} update_cache=yes state=latest
+  with_items:
+    - tomcat8
+    - tomcat8-examples
+    - tomcat8-admin
+
+- name: Create Server File For Tomact
+  template: "src=server.xml.j2 dest={{ tomcat_etc_path }}/server.xml"
+
+- name: Create Tomcat Users File For Tomact
+  template: "src=tomcat-users.xml.j2 dest={{ tomcat_etc_path }}/tomcat-users.xml"
+
+- name: Ensure Tomcat service is started, enable service on restart
+  service: name=tomcat8 state=restarted enabled=yes
