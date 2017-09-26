@@ -21,7 +21,9 @@ $ cd vuln-struts2-vm
 
 **Build Virtual Machine**
 
-**IMPORTANT:** The VM currently uses "public networking" (See: Vagrantfile). This should only be used on a secure LAN. Otherwise, "private networking" should be used. See: https://www.vagrantup.com/docs/virtualbox/networking.html
+**IMPORTANT:** The VM currently uses "public networking" (See: Vagrantfile). This should only be used on a secure LAN. Otherwise, "private networking" should be used.
+
+See: https://www.vagrantup.com/docs/virtualbox/networking.html
 
 ```
 $ vagrant up # this will raise and provision your machine
