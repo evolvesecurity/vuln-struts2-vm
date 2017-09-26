@@ -1,5 +1,6 @@
 *.log
 *.retry
+*.war
 # OS-specific
 .DS_Store
 
